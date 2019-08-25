@@ -10,8 +10,6 @@ if [ $(cat password) = "changeMe" ]; then
   exit 1
 fi
 
-PORTAINER_PASSWD=$(htpasswd -nb admin test | sed -e s/admin://)
-
 docker run -d \
 --name=portainer \
 --restart=always \
